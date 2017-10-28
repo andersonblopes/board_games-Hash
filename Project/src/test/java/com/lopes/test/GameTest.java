@@ -23,4 +23,14 @@ public class GameTest {
 		Assert.assertTrue(game.isPlayerMarkX());
 	}
 
+	@Test
+	public void setFirstPlayerAgain() {
+		Game game = new Game();
+
+		game.setPlayerMarkX(true);
+		game.setPlayerMarkX(false);
+
+		Assert.assertFalse(game.isPlayerMarkX());
+	}
+
 }

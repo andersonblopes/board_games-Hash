@@ -30,8 +30,8 @@ public class Game {
 		return line >= 0 && line < board.length && column >= 0 && column < board.length && board[line][column] == null;
 	}
 
-	public boolean isMarkXPosition(int line, int column) {
-		return true;
+	public Boolean isMarkXPosition(int line, int column) {
+		return board[line][column];
 	}
 
 	private void generateException() {

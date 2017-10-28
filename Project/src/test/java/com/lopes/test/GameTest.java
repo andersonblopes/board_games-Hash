@@ -63,4 +63,10 @@ public class GameTest {
 		Assert.assertFalse(game.isCellValid(1, 10));
 	}
 
+	@Test
+	public void readCellUnoccupied() {
+		game.setPlayerMarkX(true);
+		Assert.assertNull(game.isMarkXPosition(0, 0));
+	}
+
 }

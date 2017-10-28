@@ -16,4 +16,12 @@ public class Game {
 		return playerMarkX;
 	}
 
+	public void drawBrand(int line, int column) {
+
+	}
+
+	public boolean isMarkXPosition(int line, int column) {
+		return true;
+	}
+
 }

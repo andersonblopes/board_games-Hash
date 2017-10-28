@@ -34,4 +34,12 @@ public class GameTest {
 		Assert.assertFalse(game.isPlayerMarkX());
 	}
 
+	@Test
+	public void drawFirstBrand() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(1, 0);
+
+		Assert.assertTrue(game.isMarkXPosition(1, 0));
+	}
+
 }

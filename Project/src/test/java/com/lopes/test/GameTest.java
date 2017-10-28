@@ -54,8 +54,13 @@ public class GameTest {
 	public void drawWrongCell() {
 		game.setPlayerMarkX(true);
 		game.drawBrand(4, 0);
-		game.drawBrand(4, 4);
+		game.drawBrand(-1, 4);
 		game.drawBrand(0, 4);
+	}
+
+	@Test
+	public void valiCell() {
+		Assert.assertFalse(game.isCellValid(1, 10));
 	}
 
 }

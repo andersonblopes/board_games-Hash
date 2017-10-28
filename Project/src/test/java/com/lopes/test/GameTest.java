@@ -152,4 +152,15 @@ public class GameTest {
 		Assert.assertTrue("Game closed", game.isEndedUp());
 	}
 
+	@Test(expected = HashException.class)
+	public void drawMarkAfterFinishedGame() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(0, 2);
+		game.drawBrand(0, 0);
+		game.drawBrand(1, 1);
+		game.drawBrand(2, 2);
+		game.drawBrand(2, 0);
+		game.drawBrand(2, 1);
+	}
+
 }

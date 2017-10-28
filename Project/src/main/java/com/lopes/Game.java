@@ -24,7 +24,7 @@ public class Game {
 	}
 
 	public void drawBrand(int line, int column) {
-		if (!isCellValid(line, column) || nextMove == null) {
+		if (!isCellValid(line, column) || nextMove == null || isEndedUp()) {
 			generateException();
 		}
 		board[line][column] = nextMove;

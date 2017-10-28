@@ -6,4 +6,12 @@ public class Game {
 		return false;
 	}
 
+	public void setPlayerMarkX(boolean playerMarkX) {
+
+	}
+
+	public boolean isPlayerMarkX() {
+		return true;
+	}
+
 }

@@ -14,4 +14,13 @@ public class GameTest {
 		Assert.assertFalse("The game is over?", game.endUp());
 	}
 
+	@Test
+	public void setFirstPlayer() {
+		Game game = new Game();
+
+		game.setPlayerMarkX(true);
+
+		Assert.assertTrue(game.isPlayerMarkX());
+	}
+
 }

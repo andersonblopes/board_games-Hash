@@ -50,4 +50,12 @@ public class GameTest {
 		game.drawBrand(1, 0);
 	}
 
+	@Test(expected = HashException.class)
+	public void drawWrongCell() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(4, 0);
+		game.drawBrand(4, 4);
+		game.drawBrand(0, 4);
+	}
+
 }

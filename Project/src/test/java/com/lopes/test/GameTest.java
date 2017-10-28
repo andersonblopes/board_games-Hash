@@ -130,4 +130,15 @@ public class GameTest {
 		Assert.assertTrue("Game closed", game.isEndedUp());
 	}
 
+	@Test
+	public void gameWonThroughLine() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(1, 0);
+		game.drawBrand(0, 2);
+		game.drawBrand(1, 2);
+		game.drawBrand(2, 0);
+		game.drawBrand(1, 1);
+		Assert.assertTrue("Game closed", game.isEndedUp());
+	}
+
 }

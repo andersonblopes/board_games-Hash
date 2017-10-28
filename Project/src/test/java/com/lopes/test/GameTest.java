@@ -120,7 +120,7 @@ public class GameTest {
 	}
 
 	@Test
-	public void gameWonThroughColumn() {
+	public void wonByColumn() {
 		game.setPlayerMarkX(true);
 		game.drawBrand(0, 0);
 		game.drawBrand(1, 2);
@@ -131,13 +131,24 @@ public class GameTest {
 	}
 
 	@Test
-	public void gameWonThroughLine() {
+	public void wonByLine() {
 		game.setPlayerMarkX(true);
 		game.drawBrand(1, 0);
 		game.drawBrand(0, 2);
 		game.drawBrand(1, 2);
 		game.drawBrand(2, 0);
 		game.drawBrand(1, 1);
+		Assert.assertTrue("Game closed", game.isEndedUp());
+	}
+
+	@Test
+	public void wonByDiagonal() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(0, 2);
+		game.drawBrand(0, 0);
+		game.drawBrand(1, 1);
+		game.drawBrand(2, 2);
+		game.drawBrand(2, 0);
 		Assert.assertTrue("Game closed", game.isEndedUp());
 	}
 

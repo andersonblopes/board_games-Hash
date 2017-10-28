@@ -45,7 +45,7 @@ public class Game {
 	}
 
 	public boolean isEndedUp() {
-		return wonByColumn() || wonByLine();
+		return wonByColumn() || wonByLine() || wonByDiagonal();
 	}
 
 	private boolean wonByLine() {
@@ -62,6 +62,17 @@ public class Game {
 			if ((board[0][i] == board[1][i]) && (board[1][i] == board[2][i]) && (board[1][i] != null)) {
 				return true;
 			}
+		}
+		return false;
+	}
+
+	private boolean wonByDiagonal() {
+		if ((board[0][0] == board[1][1]) && (board[1][1] == board[2][2]) && (board[1][1] != null)) {
+			return true;
+		}
+
+		if ((board[0][2] == board[1][1]) && (board[1][1] == board[2][0]) && (board[1][1] != null)) {
+			return true;
 		}
 		return false;
 	}

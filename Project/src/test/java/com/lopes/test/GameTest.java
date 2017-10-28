@@ -110,4 +110,13 @@ public class GameTest {
 		game.drawBrand(0, 0);
 	}
 
+	@Test
+	public void drawSecondBrand() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(1, 0);
+		game.drawBrand(1, 1);
+
+		Assert.assertFalse(game.isMarkXPosition(1, 1));
+	}
+
 }

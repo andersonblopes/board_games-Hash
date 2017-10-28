@@ -4,7 +4,7 @@ import com.lopes.exception.HashException;
 
 public class Game {
 
-	private boolean playerMarkX;
+	private Boolean playerMarkX;
 	private Boolean[][] board = new Boolean[3][3];
 	private boolean started;
 
@@ -24,7 +24,7 @@ public class Game {
 	}
 
 	public void drawBrand(int line, int column) {
-		if (!isCellValid(line, column)) {
+		if (!isCellValid(line, column) || playerMarkX == null) {
 			generateException();
 		}
 		board[line][column] = playerMarkX;

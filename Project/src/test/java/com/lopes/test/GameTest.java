@@ -105,4 +105,9 @@ public class GameTest {
 		game.setPlayerMarkX(true);
 	}
 
+	@Test(expected = HashException.class)
+	public void drawBrandBeforeGameStarts() {
+		game.drawBrand(0, 0);
+	}
+
 }

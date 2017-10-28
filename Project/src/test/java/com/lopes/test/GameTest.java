@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.lopes.Game;
+import com.lopes.exception.HashException;
 
 public class GameTest {
 
@@ -40,6 +41,13 @@ public class GameTest {
 		game.drawBrand(1, 0);
 
 		Assert.assertTrue(game.isMarkXPosition(1, 0));
+	}
+
+	@Test(expected = HashException.class)
+	public void drawOcuppiedCell() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(1, 0);
+		game.drawBrand(1, 0);
 	}
 
 }

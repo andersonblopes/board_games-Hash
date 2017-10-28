@@ -6,12 +6,16 @@ public class Game {
 
 	private boolean playerMarkX;
 	private Boolean[][] board = new Boolean[3][3];
+	private boolean started;
 
 	public boolean endUp() {
 		return false;
 	}
 
 	public void setPlayerMarkX(boolean playerMarkX) {
+		if (started) {
+			generateException();
+		}
 		this.playerMarkX = playerMarkX;
 	}
 
@@ -24,6 +28,7 @@ public class Game {
 			generateException();
 		}
 		board[line][column] = playerMarkX;
+		started = true;
 	}
 
 	public boolean isCellValid(int line, int column) {

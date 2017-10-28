@@ -24,6 +24,7 @@ public class GameTest {
 	@Test
 	public void setFirstPlayer() {
 		game.setPlayerMarkX(true);
+
 		Assert.assertTrue(game.isPlayerMarkX());
 	}
 
@@ -53,6 +54,7 @@ public class GameTest {
 	@Test
 	public void readCellUnoccupied() {
 		game.setPlayerMarkX(true);
+
 		Assert.assertNull(game.isMarkXPosition(0, 0));
 	}
 
@@ -94,6 +96,13 @@ public class GameTest {
 	@Test
 	public void valiCell() {
 		Assert.assertFalse(game.isCellValid(1, 10));
+	}
+
+	@Test(expected = HashException.class)
+	public void definePlayerAfterGameStart() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(0, 0);
+		game.setPlayerMarkX(true);
 	}
 
 }

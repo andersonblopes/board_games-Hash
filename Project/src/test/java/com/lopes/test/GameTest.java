@@ -119,4 +119,15 @@ public class GameTest {
 		Assert.assertFalse(game.isMarkXPosition(1, 1));
 	}
 
+	@Test
+	public void gameWonThroughColumn() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(0, 0);
+		game.drawBrand(1, 2);
+		game.drawBrand(1, 0);
+		game.drawBrand(2, 2);
+		game.drawBrand(2, 0);
+		Assert.assertTrue("Game closed", game.isEndedUp());
+	}
+
 }

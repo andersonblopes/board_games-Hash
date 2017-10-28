@@ -50,23 +50,50 @@ public class GameTest {
 		game.drawBrand(1, 0);
 	}
 
+	@Test
+	public void readCellUnoccupied() {
+		game.setPlayerMarkX(true);
+		Assert.assertNull(game.isMarkXPosition(0, 0));
+	}
+
 	@Test(expected = HashException.class)
 	public void drawWrongCell() {
 		game.setPlayerMarkX(true);
+		game.drawBrand(4, 4);
+	}
+
+	@Test(expected = HashException.class)
+	public void drawWrongInvalidLineCell() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(-1, 0);
+	}
+
+	@Test(expected = HashException.class)
+	public void drawWrongInvalidLineCell2() {
+		game.setPlayerMarkX(true);
 		game.drawBrand(4, 0);
-		game.drawBrand(-1, 4);
+	}
+
+	@Test(expected = HashException.class)
+	public void drawWrongInvalidColumnCell() {
+		game.setPlayerMarkX(true);
+		game.drawBrand(0, -1);
+	}
+
+	@Test(expected = HashException.class)
+	public void drawWrongInvalidColumnCel2l() {
+		game.setPlayerMarkX(true);
 		game.drawBrand(0, 4);
+	}
+
+	@Test
+	public void testIsMarkXPosition() {
+		Assert.assertNull(game.isMarkXPosition(0, 0));
 	}
 
 	@Test
 	public void valiCell() {
 		Assert.assertFalse(game.isCellValid(1, 10));
-	}
-
-	@Test
-	public void readCellUnoccupied() {
-		game.setPlayerMarkX(true);
-		Assert.assertNull(game.isMarkXPosition(0, 0));
 	}
 
 }
